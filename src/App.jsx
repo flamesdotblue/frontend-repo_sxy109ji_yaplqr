@@ -1,28 +1,34 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroSection from './components/HeroSection.jsx';
+import Features from './components/Features.jsx';
+import CommandHelp from './components/CommandHelp.jsx';
+import Buckets from './components/Buckets.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <div className="min-h-screen w-full bg-black font-inter text-white">
+      <HeroSection />
+      <Features />
+      <CommandHelp />
+      <Buckets />
+
+      {/* CTA Footer */}
+      <section id="cta" className="w-full bg-black py-14">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 md:flex-row">
+          <div>
+            <h3 className="text-xl font-semibold">Ready to get organized?</h3>
+            <p className="mt-1 text-sm text-white/70">Add your first task with a single command. I’ll handle the rest.</p>
+          </div>
+          <a
+            href="#commands"
+            className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-orange-500 to-yellow-400 px-5 py-3 text-sm font-semibold text-black shadow-lg shadow-orange-500/30 transition hover:brightness-95"
           >
-            Count is {count}
-          </button>
+            /add "Plan weekly review" p:High #Work due:Friday 5pm
+          </a>
         </div>
-      </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
